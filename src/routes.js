@@ -6,7 +6,7 @@ import DecrementPage from './containers/DecrementPage';
 import AuthForm from './containers/AuthForm';
 import Authenticated from './containers/Authenticated';
 import NotAuthenticated from './containers/NotAuthenticated';
-// import PrivateRoute from './containers/PrivateRoute';
+import PrivateRoute from './containers/PrivateRoute';
 import paths from './paths';
 
 export {paths};
@@ -14,10 +14,8 @@ export {paths};
 export const routes = () => (
     <Router>
         <View>
-            <Authenticated>
-                <Route exact path={paths.home} component={InitPage} />
-                <Route path={paths.decrement} component={DecrementPage} />
-            </Authenticated>
+            <PrivateRoute exact path={paths.home} component={InitPage} />
+            <PrivateRoute path={paths.decrement} component={DecrementPage} />
             <Route path={paths.auth} component={AuthForm} />
         </View>
     </Router>
