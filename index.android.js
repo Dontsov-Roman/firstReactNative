@@ -16,7 +16,7 @@ import Routes from './src/routes';
 export default class firstProject extends Component {
   render() {
     return (
-    <Provider store={store()}>
+    <Provider store={store}>
         <Routes />
     </Provider>
     );
