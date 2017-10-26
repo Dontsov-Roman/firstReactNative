@@ -9,7 +9,9 @@ export class DecrementPage extends Component{
     render(){
         const {value,actions} = this.props;
         return (
-            <View style={{flex:1}}>
+            <View>
+                <Text>DecrementPage</Text>
+
                 <Text>
                     {value}
                 </Text>
@@ -18,10 +20,10 @@ export class DecrementPage extends Component{
                     title="decrement"
                     color="#841584"
                     />
-                <Link to={paths.increment}>
-                    <Button
-                        title="go to increment page"
-                    />
+                <Link to={paths.home}>
+                    <Text>
+                        go to increment page
+                    </Text>
                 </Link>
             </View>
         )

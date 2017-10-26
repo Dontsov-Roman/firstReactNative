@@ -18,7 +18,9 @@ export class InitPage extends Component{
     render(){
         const {value,actions} = this.props;
         return (
-            <View style={{flex:1}}>
+            <View>
+                <Text>IncrementPage</Text>
+
                 <Text>
                     {value}
                 </Text>
@@ -26,12 +28,14 @@ export class InitPage extends Component{
                     onPress={actions.increment}
                     title="increment"
                     color="#841584"
-                />
-                <Link to={paths.decrement}>
-                    <Button
-                        title="go to decrement page"
                     />
-                </Link>
+                <View>
+                    <Link to={paths.decrement}>
+                        <Text>
+                            go to decrement page
+                        </Text>
+                    </Link>
+                </View>
             </View>
         )
     }
