@@ -20,12 +20,12 @@ export class Authenticated extends Component{
 
 export const decorator = connect(state=>({
     isAuth,
-    to:paths.auth
+    to:paths.login
 }));
 
 export default withRouter(({ history }) => {
     if(!isAuth()){
-        history.push(paths.auth)
+        history.push(paths.login)
     }else {
         return decorator(Authenticated);
     }

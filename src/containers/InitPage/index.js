@@ -4,7 +4,8 @@ import {bindActionCreators} from 'redux';
 import {View, Text, Button} from 'react-native';
 import {Link} from 'react-router-native';
 
-import {paths} from '../../routes'
+import ButtonRedirect from '../../components/ButtonRedirect';
+import {paths} from '../../routes';
 import * as actions from '../../actions/app';
 
 export class InitPage extends Component{
@@ -30,11 +31,7 @@ export class InitPage extends Component{
                     color="#841584"
                     />
                 <View>
-                    <Link to={paths.decrement}>
-                        <Text>
-                            go to decrement page
-                        </Text>
-                    </Link>
+                    <ButtonRedirect to={paths.decrement} title="go to decrement page" color="#00ff00" />
                 </View>
             </View>
         )

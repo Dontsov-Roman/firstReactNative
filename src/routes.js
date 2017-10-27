@@ -4,8 +4,8 @@ import {NativeRouter as Router, Route, Link, Redirect} from 'react-router-native
 import InitPage from './containers/InitPage';
 import DecrementPage from './containers/DecrementPage';
 import AuthForm from './containers/AuthForm';
-import Authenticated from './containers/Authenticated';
-import NotAuthenticated from './containers/NotAuthenticated';
+// import Authenticated from './containers/Authenticated';
+// import NotAuthenticated from './containers/NotAuthenticated';
 import PrivateRoute from './containers/PrivateRoute';
 import paths from './paths';
 
@@ -16,7 +16,7 @@ export const routes = () => (
         <View>
             <PrivateRoute exact path={paths.home} component={InitPage} />
             <PrivateRoute path={paths.decrement} component={DecrementPage} />
-            <Route path={paths.auth} component={AuthForm} />
+            <Route path={paths.login} component={AuthForm} />
         </View>
     </Router>
 );
