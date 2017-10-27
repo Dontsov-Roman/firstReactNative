@@ -9,7 +9,7 @@ import {Redirect} from 'react-router-native';
 export default class Welcome extends Component{
 
     static defaultProps = {
-        name:''
+        name:'Anonymous'
     }
 
     render(){

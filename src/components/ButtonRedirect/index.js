@@ -4,9 +4,9 @@ import {withRouter} from 'react-router-native';
 
 export default withRouter(({history, to, onPress, ...rest}) => (
     <Button
-    onPress={()=>{
-        history.push(to);
-        onPress?onPress():'';
-    }}
+        onPress={()=>{
+            history.push(to);
+            onPress?onPress():'';
+        }}
     {...rest}
     />));

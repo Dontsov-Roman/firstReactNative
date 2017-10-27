@@ -3,30 +3,24 @@ import {connect} from 'react-redux';
 import {View} from 'react-native';
 import {Redirect, Route, withRouter} from 'react-router-native';
 import paths from '../../paths';
-import Welcome from '../Welcome';
+import Welcome from '../../components/Welcome';
 import {isAuth} from '../../store';
 
 export class Authenticated extends Component{
     render(){
-        const {children} = this.props;
+        const {children,user} = this.props;
         return(
             <View>
-                <Welcome />
+                <Welcome name={user.name} />
                 {children}
             </View>
         )
     }
 }
 
-export const decorator = connect(state=>({
+export const decorator = connect(state => ({
     isAuth,
-    to:paths.login
+    to:paths.login,
+    user:state.user
 }));
-
-export default withRouter(({ history }) => {
-    if(!isAuth()){
-        history.push(paths.login)
-    }else {
-        return decorator(Authenticated);
-    }
-})
+export default decorator(Authenticated);

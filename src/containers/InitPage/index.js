@@ -4,10 +4,12 @@ import {bindActionCreators} from 'redux';
 import {View, Text, Button} from 'react-native';
 import {Link} from 'react-router-native';
 
+import {withWelcome} from '../../containers/Welcome';
 import ButtonRedirect from '../../components/ButtonRedirect';
 import {paths} from '../../routes';
 import * as actions from '../../actions/app';
 
+@withWelcome
 export class InitPage extends Component{
     static defaultProps = {
         state:{
@@ -17,11 +19,10 @@ export class InitPage extends Component{
         value:'value from defaultProps'
     }
     render(){
-        const {value,actions} = this.props;
+        const {value, actions, match:matcher} = this.props;
         return (
             <View>
                 <Text>IncrementPage</Text>
-
                 <Text>
                     {value}
                 </Text>
