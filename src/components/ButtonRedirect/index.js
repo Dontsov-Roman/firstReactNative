@@ -1,12 +1,13 @@
-import React,{Component} from 'react';
-import {Button} from 'react-native';
-import {withRouter} from 'react-router-native';
+import React, { Component } from 'react';
+import { Button } from 'react-native';
+import { withRouter } from 'react-router-native';
 
-export default withRouter(({history, to, onPress, ...rest}) => (
-    <Button
-        onPress={()=>{
-            to?history.push(to):'';
-            onPress?onPress():'';
-        }}
+export default withRouter(({ history, to, onPress, ...rest }) => (
+  <Button
+    onPress={() => {
+      to ? history.push(to) : '';
+      onPress ? onPress() : '';
+    }}
     {...rest}
-    />));
+  />
+));
