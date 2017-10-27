@@ -3,9 +3,11 @@ import {View, Text, Button} from 'react-native';
 import {Link} from 'react-router-native';
 
 import ButtonRedirect from '../../components/ButtonRedirect';
+import {withWelcome} from '../Welcome';
 import {paths} from '../../routes'
 import {decorator} from '../InitPage'
 
+@withWelcome
 export class DecrementPage extends Component{
     render(){
         const {value,actions} = this.props;

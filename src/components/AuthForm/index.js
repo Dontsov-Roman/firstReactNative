@@ -32,7 +32,7 @@ export default class AuthForm extends Component{
                 onChangeText={name => this.setState({name})}
                 value={name}
                 />
-            <Button title="Login" color="#ff0000" onPress={this.login} />
+            <Button title="Login" color="#ff0000" onPress={()=>this.login(name)} />
         </View>
     }
 }

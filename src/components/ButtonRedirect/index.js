@@ -5,7 +5,7 @@ import {withRouter} from 'react-router-native';
 export default withRouter(({history, to, onPress, ...rest}) => (
     <Button
         onPress={()=>{
-            history.push(to);
+            to?history.push(to):'';
             onPress?onPress():'';
         }}
     {...rest}

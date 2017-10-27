@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import {View, Text, Button} from 'react-native';
 import {Link} from 'react-router-native';
 
-import {withWelcome} from '../../containers/Welcome';
+import Welcome,{withWelcome} from '../Welcome';
 import ButtonRedirect from '../../components/ButtonRedirect';
 import {paths} from '../../routes';
 import * as actions from '../../actions/app';
@@ -19,7 +19,7 @@ export class InitPage extends Component{
         value:'value from defaultProps'
     }
     render(){
-        const {value, actions, match:matcher} = this.props;
+        const {value, actions, match:matcher,user:{name}} = this.props;
         return (
             <View>
                 <Text>IncrementPage</Text>
