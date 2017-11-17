@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import {View, Text, Button} from 'react-native';
-import {Link} from 'react-router-native';
 
 import ButtonRedirect from '../../components/ButtonRedirect';
 import {withWelcome} from '../Welcome';
@@ -12,9 +11,8 @@ export class DecrementPage extends Component{
     render(){
         const {value,actions} = this.props;
         return (
-            <View>
+            <View style={styles.container}>
                 <Text>DecrementPage</Text>
-
                 <Text>
                     {value}
                 </Text>

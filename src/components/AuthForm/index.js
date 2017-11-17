@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { Redirect } from 'react-router-native';
-import * as actions from '../../actions/user';
 
 export default class AuthForm extends Component {
   constructor(props) {
@@ -25,7 +23,7 @@ export default class AuthForm extends Component {
     return redirectToReferer ? (
       <Redirect to={from} />
     ) : (
-      <View>
+      <View style={styles.container}>
         <Text>Please enter your name</Text>
         <TextInput
           placeholder="Type name here"
