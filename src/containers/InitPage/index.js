@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {View, Text, Button} from 'react-native';
-import {Link} from 'react-router-native';
 
-import Welcome,{withWelcome} from '../Welcome';
+import {withWelcome} from '../Welcome';
 import ButtonRedirect from '../../components/ButtonRedirect';
+import GeoPosition from '../../components/GeoPosition';
 import {paths} from '../../routes';
 import * as actions from '../../actions/app';
 
@@ -14,9 +14,16 @@ export class InitPage extends Component{
     static defaultProps = {
         state:{
             testText:'text from defaultProps',
-            value:'value from defaultProps state'
+            value:'value from defaultProps state',
+            position:'some string'
         },
         value:'value from defaultProps'
+    }
+    constructor(props){
+        super(props);
+        this.state = {
+            position:'init position'
+        }
     }
     render(){
         const {value, actions, match:matcher,user:{name}} = this.props;
@@ -26,6 +33,7 @@ export class InitPage extends Component{
                 <Text>
                     {value}
                 </Text>
+                <GeoPosition />
                 <Button
                     onPress={actions.increment}
                     title="increment"
